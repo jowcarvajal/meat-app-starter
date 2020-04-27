@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './services/shopping-cart.service';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
@@ -43,7 +44,7 @@ import { RestaurantComponent } from './components/restaurant/restaurant.componen
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantService],
+  providers: [RestaurantService, ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
