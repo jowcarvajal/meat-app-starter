@@ -1,3 +1,4 @@
+import { OrderCostsComponent } from './components/order-costs/order-costs.component';
 import { OrderService } from './services/order.service';
 import { OrderItemComponent } from './components/order-item/order-item.component';
 import { RadioComponent } from './shared/radio/radio.component';
@@ -49,7 +50,8 @@ import { RestaurantComponent } from './components/restaurant/restaurant.componen
     OrderComponent,
     InputComponent,
     RadioComponent,
-    OrderItemComponent
+    OrderItemComponent,
+    OrderCostsComponent
   ],
   imports: [
     BrowserModule,
