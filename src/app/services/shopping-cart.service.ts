@@ -23,7 +23,8 @@ export class ShoppingCartService {
   addItem(menuItem: MenuItem) {
     let existMenuItem = this.items.find((shoppingCartItem) => shoppingCartItem.menuItem.id === menuItem.id);
     if (existMenuItem) {
-      existMenuItem.quantity = existMenuItem.quantity + 1;
+      this.increaseItemQtde(existMenuItem);
+      //existMenuItem.quantity = existMenuItem.quantity + 1;
     } else {
       this.items.push(new ShoppingCartItem(menuItem));
     }
@@ -33,4 +34,14 @@ export class ShoppingCartService {
     this.items.splice(this.items.indexOf(item), 1);
   }
 
+  increaseItemQtde(item: ShoppingCartItem) {
+    item.quantity = item.quantity + 1;
+  }
+
+  decreaseItemQtde(item: ShoppingCartItem) {
+    item.quantity = item.quantity - 1;
+    if(item.quantity === 0) {
+      this.removeItem(item);
+    }
+  }
 }
